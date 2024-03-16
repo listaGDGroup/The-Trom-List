@@ -2,12 +2,12 @@
     {
         "role": "owner",
         "name": "Trom",
-        "link": "https://www.youtube.com/channel/@ItzTrom"
+        "link": "https://www.youtube.com/channel/UCno6w9W6Jo955eUSF4K4IGA"
     },
     {
         "role": "admin",
         "name": "Kebab",
-        "link": "https://www.youtube.com/@Prometheus_Alt"
+        "link": "https://www.youtube.com/channel/UC_tPgBUX9ABBU9TWpEOw-VQ"
     },
     {
         "role": "helper",
@@ -21,7 +21,7 @@
     },
     {
         "role": "dev",
-        "name": "List Coder",
-        "link": "https://www.youtube.com/@Prometheus_Alt"
+        "name": "Trom",
+        "link": "https://www.youtube.com/channel/UCno6w9W6Jo955eUSF4K4IGA"
     }
 ]
