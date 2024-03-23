@@ -1,12 +1,12 @@
 [
     {
         "role": "owner",
-        "name": "Trom",
+        "name": "Owner - Trom",
         "link": "https://www.youtube.com/channel/UCno6w9W6Jo955eUSF4K4IGA"
     },
     {
         "role": "admin",
-        "name": "Kebab",
+        "name": "Admin - Kebab",
         "link": "https://www.youtube.com/channel/UC_tPgBUX9ABBU9TWpEOw-VQ"
     },
     {
@@ -21,7 +21,7 @@
     },
     {
         "role": "dev",
-        "name": "Trom",
-        "link": "https://www.youtube.com/channel/UCno6w9W6Jo955eUSF4K4IGA"
+        "name": "Dev - Prometheus",
+        "link": "https://www.youtube.com/@Prometheus_Alt"
     }
 ]
