@@ -8,5 +8,10 @@
     "percentToQualify": "75",
     "password": "Free to Copy",
     "records": [
+        {
+            "user": "kkebabb",
+            "percent": 100,
+            "hz": 240
+        }
     ]
 }
