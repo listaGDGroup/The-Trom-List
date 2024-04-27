@@ -7,5 +7,17 @@
     "verification": "https://youtu.be/qcgoezk05X0",
     "percentToQualify": "75",
     "password": "Free to Copy",
-    "records": []
+    "records": [
+{
+            "user": "kkekabb",
+            "percent": 100,
+            "link": "",
+            "hz": 360
+
+            "user": "ItzTrom",
+            "percent": 100,
+            "link": "",
+            "hz": 240
+        }
+    ]
 }
