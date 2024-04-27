@@ -8,12 +8,13 @@
     "percentToQualify": "75",
     "password": "Free to Copy",
     "records": [
-{
+        {
             "user": "kkekabb",
             "percent": 100,
             "link": "https://youtu.be/oDkITu6Y_Bg?si=tmscbyiZZlPkvNxK",
             "hz": 360
-
+        }
+        {
             "user": "ItzTrom",
             "percent": 100,
             "hz": 240
