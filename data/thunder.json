@@ -7,5 +7,12 @@
     "verification": "https://youtu.be/PpMp3Rqn4ZQ",
     "percentToQualify": "75",
     "password": "Free to Copy",
-    "records": []
+    "records": [
+        {
+            "user": "Kebab",
+            "percent": 100,
+            "link": "https://youtu.be/Yylz3TatVHI",
+            "hz": 240
+        }
+    ]
 }
