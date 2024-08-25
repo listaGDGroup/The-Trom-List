@@ -10,6 +10,11 @@
     "percentToQualify": "75",
     "password": "Free to Copy",
     "records": [
-        https://youtu.be/YUzC1rYJYSQ
+        {
+            "user": "UHBatataDoce",
+            "percent": 100,
+            "link": "https://youtu.be/YUzC1rYJYSQ",
+            "hz": 240
+        }
     ]
 }
