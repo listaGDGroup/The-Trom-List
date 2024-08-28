@@ -8,6 +8,11 @@
     "percentToQualify": "75",
     "password": "Free to Copy",
     "records": [
-        {https://youtu.be/2oThfLk9nXg
+        {
+            "user": "Kebab",
+            "percent": 100,
+            "link": "https://youtu.be/2oThfLk9nXg",
+            "hz": 240
+        }
     ]
 }
