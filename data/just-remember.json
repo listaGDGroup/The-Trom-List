@@ -1,1 +1,18 @@
-
+{
+    "id": 96721040,
+    "name": "Just Remember",
+    "author": "UHBatataDoce",
+    "creators": [],
+    "verifier": "UHBatataDoce",
+    "verification": "https://youtu.be/7ToTUkBUmwY",
+    "percentToQualify": "100",
+    "password": "Free to Copy",
+    "records": [
+        {
+            "user": "ItzTrom",
+            "percent": 100,
+            "link": "NA",
+            "hz": 480
+        }
+    ]
+}
