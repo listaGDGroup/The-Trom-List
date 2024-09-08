@@ -10,7 +10,9 @@
     "records": [
         {
             "user": "UHBatataDoce"
-            "percent": "https://youtu.be/5kgqY-izBtU"
+            "percent": 100
+            "link": "https://youtu.be/5kgqY-izBtU"
+            "hz": 240
         }
     ]
 }
