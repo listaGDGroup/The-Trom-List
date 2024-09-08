@@ -9,7 +9,10 @@
     "password": "Free to Copy",
     "records": [
         {
-            "name": UHBatataDoce
+            "user": "UHBatataDoce",
+            "percent": 100,
+            "link": "https://youtu.be/YYeonE2z1VM",
+            "hz": 240
         }
     ]
 }
