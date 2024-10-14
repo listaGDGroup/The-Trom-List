@@ -7,5 +7,12 @@
     "verification": "https://youtu.be/6hYiOPVnTNA",
     "percentToQualify": "100",
     "password": "Free to Copy",
-    "records": []
+    "records": [
+        {
+            "user": "ItzTrom",
+            "percent": 100,
+            "link": "https://youtu.be/Qkhq6gwEZuc",
+            "hz": 240
+        }
+    ]
 }
