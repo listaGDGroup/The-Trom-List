@@ -1,1 +1,18 @@
-
+{
+    "id": 111715501,
+    "name": "After Hours",
+    "author": "UHBatataDoce",
+    "creators": [],
+    "verifier": "UHBatataDoce",
+    "verification": "https://youtu.be/2MGcaIV84H8",
+    "percentToQualify": "100",
+    "password": "Copyable",
+    "records": [
+        {
+            "user": "ItzTrom",
+            "percent": 100,
+            "link": "https://youtu.be/MVFcBOwMft4",
+            "hz": "480"
+        }
+    ]
+}
