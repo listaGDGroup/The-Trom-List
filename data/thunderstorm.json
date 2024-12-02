@@ -9,6 +9,12 @@
     "password": "Free to Copy",
     "records": [
         {
+            "user": "Kebab",
+            "percent": 100,
+            "link": "https://www.youtube.com/watch?v=1yegB5K0yNk",
+            "hz": 240
+        },
+        {
             "user": "UHBatataDoce",
             "percent": 100,
             "link": "NA",
