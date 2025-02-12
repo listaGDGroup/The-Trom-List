@@ -1,1 +1,18 @@
-
+{
+    "id": 115018871,
+    "name": "Adoror Enigmas",
+    "author": "GuilhermeKoji",
+    "creators": [],
+    "verifier": "GuilhermeKoji",
+    "verification": "https://youtu.be/-ylJf8yrdm0",
+    "percentToQualify": "100",
+    "password": "Not Copyable",
+    "records": [
+        {
+            "user": "ItzTrom",
+            "percent": 100,
+            "link": "https://youtu.be/ut1Ucx2RYe4?si=FMpLreCZBubcaruA",
+            "hz": "60"
+        }
+    ]
+}
