@@ -18,6 +18,12 @@
             "percent": 100,
             "link": "https://youtu.be/HI0ZBRor58s",
             "hz": 240
+        },
+        {
+            "user": "GuilhermeKoji",
+            "percent": 100,
+            "link": "https://youtu.be/Va-dgLBIYxw",
+            "hz": "60"
         }
     ]
 }
