@@ -6,13 +6,5 @@
     "verifier": "UHBatataDoce",
     "verification": "https://youtu.be/blB54TEu_n0",
     "percentToQualify": "100",
-    "records": [
-        {
-            "user": "Mofoy",
-            "percent": 100,
-            "link": "https://youtu.be/G9pIfB5h2Bg?si=K85Cyfh8wsj_wAfW",
-            "mobile": true,
-            "hz": 60
-        }
-    ]
+    "records": []
 }
