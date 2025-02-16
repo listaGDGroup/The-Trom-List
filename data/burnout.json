@@ -23,6 +23,13 @@
             "percent": 100,
             "link": "https://youtu.be/Va-dgLBIYxw",
             "hz": "60"
+        },
+        {
+            "user": "Mofoy",
+            "percent": 100,
+            "link": "https://youtu.be/hCa82p0Tog0?si=XQmKDrxkBXUbHbC4",
+            "hz": 7000,
+            "mobile": true
         }
     ]
 }
