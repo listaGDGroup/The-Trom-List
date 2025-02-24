@@ -1,1 +1,22 @@
-
+{
+    "id": 115458219,
+    "name": "Hope WB",
+    "author": "ItzTrom",
+    "creators": [ "NanduO3O" ],
+    "verifier": "NanduO3O",
+    "verification": "https://youtu.be/aIkAkfAWam8",
+    "percentToQualify": "100",
+    "records": [
+        {
+            "user": "vicente",
+            "percent": 100,
+            "link": "https://youtu.be/u9IC_1Jn5CY",
+            "hz": 240
+        }, {
+            "user": "ItzTrom",
+            "percent": 100,
+            "link": "https://youtu.be/1BTaW0xsOEo",
+            "hz": 240
+        }
+    ]
+}
