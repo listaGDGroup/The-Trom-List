@@ -6,5 +6,12 @@
     "verifier": "UHBatatadoce",
     "verification": "https://youtu.be/M9gKypHI-Hc",
     "percentToQualify": "100",
-    "records": []
+    "records": [
+        {
+            "user": "Kebab",
+            "percent": 100,
+            "link": "https://youtu.be/UTTXZ1y7YA4",
+            "hz": 240
+        }
+    ]
 }
