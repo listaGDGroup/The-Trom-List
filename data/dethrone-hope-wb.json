@@ -8,6 +8,12 @@
     "percentToQualify": "100",
     "records": [
         {
+            "user": "ItzTrom"
+            "percent": 100,
+            "link": "https://youtu.be/5W90zEiomxo"
+            "hz": 60
+        },
+        {
             "user": "Kebab",
             "percent": 100,
             "link": "https://youtu.be/qbauNIdyqvM",
