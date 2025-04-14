@@ -1,2 +1,10 @@
-117352741
-https://www.youtube.com/watch?v=fyjDb8zVdgc
+{
+    "id": 117352741,
+    "name": "Kunavara",
+    "author": "Kebab",
+    "creators": ["ItzTrom"],
+    "verifier": "Kebab",
+    "verification": "https://www.youtube.com/watch?v=fyjDb8zVdgc",
+    "percentToQualify": "100",
+    "records": []
+}
