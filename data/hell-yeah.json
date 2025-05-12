@@ -6,5 +6,13 @@
     "verifier": "SimpaticoMeow",
     "verification": "Lol https://youtu.be/ItzEgTlsEy4?si=LBQhbUr_v9_RZRof",
     "percentToQualify": "100",
-    "records": []
+    "records": [
+        {
+            "user": "ItzTrom",
+            "percent": 100,
+            "link": "https://youtu.be/GPCGc4Pma9c",
+            "mobile": "true",
+            "hz": 60
+        }
+    ]
 }
