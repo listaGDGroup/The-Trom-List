@@ -37,6 +37,13 @@
             "percent": 100,
             "link": "https://youtu.be/rPl-5tHV9S4",
             "hz": 60
+        },
+        {
+            "user": "SimpaticoMeow",
+            "percent": 100,
+            "link": "https://youtu.be/cr-L_lw1DhQ?si=-s0c0YbrEF9MCQAw",
+            "mobile": true,
+            "hz": "90"
         }
     ]
 }
