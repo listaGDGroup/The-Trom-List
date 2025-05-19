@@ -19,6 +19,18 @@
             "percent": 100,
             "link": "https://youtu.be/4YPHGyi_t4c",
             "hz": 240
+        },
+        {
+            "user": "blizzard",
+            "percent": 100,
+            "link": "https://www.youtube.com/watch?v=lo0r2T1_ttQ",
+            "hz": 240
+        },
+        {
+            "user": "kebab",
+            "percent": 100,
+            "link": "https://youtu.be/pQsJFUxu5ak",
+            "hz": 480
         }
     ]
 }
