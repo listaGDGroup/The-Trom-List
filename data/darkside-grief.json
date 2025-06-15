@@ -6,5 +6,12 @@
     "verifier": "rasfa",
     "verification": "https://youtu.be/a9NTT23sXdo",
     "percentToQualify": "100",
-    "records": []
+    "records": [
+        {
+            "user": "Kebab",
+            "percent": 100,
+            "link": "https://www.youtube.com/watch?v=82FQ38Z6n-w",
+            "hz": 480
+        }
+    ]
 }
