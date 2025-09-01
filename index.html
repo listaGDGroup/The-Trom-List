@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta property="og:title" content="The Shitty List" />
+    <meta property="og:description"
+        content="A collection of shitty levels that are accessible" />
+    <meta property="og:url" content="https://tsl.pages.dev" />
+    <meta property="og:image" content="/assets/tsl_banner.png" />
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="theme-color" content="#0066ff">
+    <meta name="description" content="A collection of shitty levels that are accessible">
+    <link rel="canonical" href="https://tsl.pages.dev" />
+    <title>TSL</title>
+    <link rel="icon" href="/list_icon.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="/css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="/css/typography.css" />
+    <link rel="stylesheet" type="text/css" href="/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="/css/pages/list.css" />
+    <link rel="stylesheet" type="text/css" href="/css/pages/leaderboard.css" />
+    <link rel="stylesheet" type="text/css" href="/css/pages/roulette.css" />
+    <link rel="stylesheet" type="text/css" href="/css/pages/listpacks.css" />
+    <link rel="stylesheet" type="text/css" href="/css/components/nav.css" />
+    <link rel="stylesheet" type="text/css" href="/css/components/btn.css" />
+    <link rel="stylesheet" type="text/css" href="/css/components/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="/css/pages/login.css" />
+    <link rel="stylesheet" type="text/css" href="/css/pages/userarea.css" />
+    <link rel="stylesheet" type="text/css" href="/css/pages/submit.css" />
+    <script src="https://unpkg.com/vue@3.2.31/dist/vue.global.js"></script>
+    <script src="https://unpkg.com/vue-router@4.0.14/dist/vue-router.global.prod.js"></script>
+    <script type="module" src="/js/main.js"></script>
+</head>
+<body id="app">
+    <div class="root" :class="{ dark: store.dark }">
+        <header class="surface">
+            <div class="logo">
+                <div class="logo">
+                    <h2>TSL</h2>
+                    <p>v2.2.0</p>
+                </div>
+            </div>
+            <nav class="nav" :class="{ 'mobile-open': store.mobileNavOpen }">
+                <router-link class="nav__tab" to="/" @click="store.closeMobileNav()">
+                    <span class="type-label-lg">List</span>
+                </router-link>
+                <router-link class="nav__tab" to="/leaderboard" @click="store.closeMobileNav()">
+                    <span class="type-label-lg">Leaderboard</span>
+                </router-link>
+                <router-link class="nav__tab" to="/roulette" @click="store.closeMobileNav()">
+                    <span class="type-label-lg">Roulette</span>
+                </router-link>
+                <router-link class="nav__tab" to="/list-packs" @click="store.closeMobileNav()">
+                    <span class="type-label-lg">Packs</span>
+                </router-link>
+                <div class="nav__actions">
+                    <button
+                        class="nav__icon"
+                        @click.prevent="store.toggleDark()"
+                    >
+                        <img
+                            :src="store.dark ? '/assets/light.svg' : '/assets/dark.svg'"
+                            :alt="store.dark ? 'Switch to light theme' : 'Switch to dark theme'"
+                        />
+                    </button>
+                    <a class="nav__icon" href="https://discord.gg/tsl-713151800932433972" @click="store.closeMobileNav()">
+                        <img src="/assets/discord.svg" alt="Discord Logo" />
+                    </a>
+                    <span class="nav__cta type-label-lg">
+                         <router-link to="/submit" @click="store.closeMobileNav()">
+                        Submit Record
+                    </router-link>
+                    </span>
+                    <span class="nav__cta type-label-lg" v-if="!store.isLoggedIn">
+                         <router-link to="/login" @click="store.closeMobileNav()">
+                        Login
+                    </router-link>
+                    </span>
+                    <span class="nav__cta type-label-lg" v-if="!store.isLoggedIn">
+                         <router-link to="/register" @click="store.closeMobileNav()">
+                        Register
+                    </router-link>
+                    </span>
+                    <span class="nav__cta type-label-lg" v-if="store.isLoggedIn">
+                         <router-link to="/user" @click="store.closeMobileNav()">
+                        Profile
+                    </router-link>
+                    </span>
+                    <span class="nav__cta type-label-lg" v-if="store.isLoggedIn">
+                        <a href="#" @click.prevent="logout(); store.closeMobileNav()">Logout</a>
+                    </span>
+                </div>
+            </nav>
+        </header>
+        <router-view></router-view>
+    </div>
+<!-- Cloudflare Pages Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "8a7dfa1fa0a943e48d2a13e7d60e121b"}'></script><!-- Cloudflare Pages Analytics --></body>
+
+</html>
