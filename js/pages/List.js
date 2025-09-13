@@ -100,7 +100,7 @@ export default {
                     </template>
                     <h3>Submission Requirements</h3>
                     <p>
-                        Achieved the record without using hacks. All completion that have any type of physics bypass will not be considered legitimate. (however, FPS bypass is allowed, up to 360fps)
+                        Achieved the record without using hacks. All completions that have any type of physics bypass will not be considered legitimate. (however, FPS bypass is allowed, up to 360fps)
                     </p>
                     <p>
                         Achieved the record on the level that is listed on the site - please check the level ID before you submit a record.
