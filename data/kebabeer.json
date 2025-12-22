@@ -8,15 +8,15 @@
     "percentToQualify": "100",
     "records": [
         {
-            "user": "UHBatataDoce"
-            "percent": 100
-            "link": "https://youtu.be/vtV2szZJSxk"
+            "user": "UHBatataDoce", 
+            "percent": 100,
+            "link": "https://youtu.be/vtV2szZJSxk",
             "hz": 240
         },
         {
-            "user": "ItzTrom"
-            "percent": 100
-            "link": "https://youtu.be/vcy-Ot-h6mk"
+            "user": "ItzTrom",
+            "percent": 100,
+            "link": "https://youtu.be/vcy-Ot-h6mk",
             "hz": 720
         }
     ]
