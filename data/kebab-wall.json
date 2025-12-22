@@ -6,5 +6,18 @@
     "verifier": "ItzTrom",
     "verification": "https://youtu.be/lTQyC_0I4A0",
     "percentToQualify": "100",
-    "records": []
+    "records": [
+        {
+            "user": "UHBatataDoce",
+            "percent": 100,
+            "link": "https://youtu.be/zoZmuYEhJ3Q",
+            "hz": 240
+        },
+        {
+            "user": "Kebab",
+            "percent": 100,
+            "link": "https://youtu.be/IKsvK7ekTdI",
+            "hz": 720
+        }
+    ]
 }
