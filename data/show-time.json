@@ -6,6 +6,12 @@
     "verifier": "UHBatataDoce",
     "verification": "https://youtu.be/DywyXRPIMzc",
     "percentToQualify": 100,
-    "records": []
-}  
- 
+    "records": [
+        {
+            "user": "ItzTrom",
+            "percent": 100,
+            "link": "https://youtu.be/tW2Xp4nBoyg",
+            "hz": 720
+        }
+    ]
+}
