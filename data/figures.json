@@ -7,5 +7,12 @@
     "verification": "https://youtu.be/FsnK97F-3_o?si=8Cer7iLfDV-8MQ1P",
     "showcase": "https://youtu.be/hX56a3HZ4MU?si=aw5EjH5JDzOTjzwp",
     "percentToQualify": "100",
-    "records": []
+    "records": [
+        {
+            "user": "ItzTrom",
+            "percent": 100,
+            "link": "https://youtu.be/OtY6Q88iM9s",
+            "hz": 720
+        }
+    ]
 }
