@@ -7,6 +7,12 @@
     "verification": "https://youtu.be/8cpflCbMawk",
     "percentToQualify": "100",
     "records": [
+        {
+            "user": "UHBatataDoce",
+            "percent": 100,
+            "link": "https://youtu.be/Eyx_yEQwDv4",
+            "hz": 240
+        },
          {
             "user": "ItzTrom",
             "percent": 100,
@@ -18,12 +24,6 @@
             "percent": 100,
             "link": "https://youtu.be/NUJQj6DI0MQ",
             "hz": 720
-        },
-        {
-            "user": "UHBatataDoce",
-            "percent": 100,
-            "link": "https://youtu.be/Eyx_yEQwDv4",
-            "hz": 240
         }
     ]
 }
