@@ -1,1 +1,23 @@
-
+{
+   "id": 121879726,
+    "name": "Garden Flowers",
+    "author": "UHBatataDoce",
+    "creators": [],
+    "verifier": "Kebab",
+    "verification": "https://youtu.be/a9Y-GqqTi3s",
+    "percentToQualify": "100",
+    "records": [
+         {
+            "user": "Trozu",
+            "percent": 100,
+            "link": "https://youtu.be/Iua3-8DbpS4",
+            "hz": 240
+        },
+        {
+            "user": "ItzTrom",
+            "percent": 100,
+            "link": "https://youtu.be/efo2aVc7KfQ",
+            "hz": 720
+        }
+    ]
+}
