@@ -12,10 +12,17 @@
             "percent": 100,
             "link": "https://youtu.be/zPp82UixAoM",
             "hz": 240
-        }, {
+        },
+        {
             "user": "ItzTrom",
             "percent": 100,
             "link": "https://youtu.be/OuhXjtAEerk",
+            "hz": 480
+        },
+        {
+            "user": "Trozu",
+            "percent": 100,
+            "link": "https://youtu.be/Ist_Z_Fasx4?si=8vBUs1-uvfYE1l7c",
             "hz": 480
         }
     ]
