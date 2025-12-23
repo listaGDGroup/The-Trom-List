@@ -24,10 +24,32 @@ export function score(rank, percent, minPercent) {
         ((percent - (minPercent - 1)) / (100 - (minPercent - 1)));
     */
     // New formula
-    let score = (-24.9975*Math.pow(rank-1, 0.4) + 200) *
-        ((percent - (minPercent - 1)) / (100 - (minPercent - 1)));
+   const r = Number(rank);
+const p = Number(percent);
+const m = Number(minPercent);
 
-    score = Math.max(0, score);
+// Se qualquer coisa estiver errada, score = 0
+if (!Number.isFinite(r) || !Number.isFinite(p) || !Number.isFinite(m)) {
+  return 0;
+}
+
+// Evita valores negativos e divisão inválida
+const base = -24.9975 * Math.pow(Math.max(0, r - 1), 0.4) + 200;
+const denom = 100 - (m - 1);
+
+if (denom <= 0) {
+  return 0;
+}
+
+let score = base * ((p - (m - 1)) / denom);
+
+// Garante número válido
+if (!Number.isFinite(score)) {
+  return 0;
+}
+
+return Math.max(0, score);
+
 
     if (percent != 100) {
         return round(score - score / 3);
