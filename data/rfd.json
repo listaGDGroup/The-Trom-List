@@ -6,5 +6,12 @@
     "verifier": "CACA",
     "verification": "https://www.youtube.com/watch?v=fmLcGyZaTgE",
     "percentToQualify": "100",
-    "records": []
+    "records": [
+        {
+            "user": "ItzTrom",
+            "percent": 100,
+            "link": "https://youtu.be/LNA2zjMCfdw",
+            "hz": 720
+        }
+    ]
 }
