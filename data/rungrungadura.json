@@ -11,19 +11,20 @@
             "user": "ItzTrom",
             "percent": 100,
             "link": "https://youtu.be/GPCGc4Pma9c",
-            "hz": 480
-        }, {
+            "hz": "480FPS"
+        },
+        {
             "user": "Kebab",
             "percent": 100,
             "link": "https://youtu.be/bDPfThcZseg",
-            "hz": 240
+            "hz": "240FPS"
         },
         {
             "user": "Mofoy",
             "percent": 100,
             "link": "https://youtu.be/p8LJzmDPMt0?si=XHDk7UaRpk88QXX5",
             "mobile": "true",
-            "hz": 60
+            "hz": "60FPS"
         }
     ]
 }
