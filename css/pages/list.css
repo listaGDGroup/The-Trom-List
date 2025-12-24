@@ -136,14 +136,9 @@
     font-family: "Lexend Deca", sans-serif;
     font-size: 17.1428571429px;
     font-weight: 700;
-
-    transform: translateY(1)
 }
 
 
 .page-list .level-container .level .stats .nong-text:hover {
     text-decoration: underline;
 }
-
-.page-list .level-container .level .stats .nong-text {
-    transform: translateY(1)
