@@ -53,7 +53,9 @@ export default {
                         <li>
                             <div v-if="level.nong">
                             <div class="type-title-sm">Nong</div>
-                            <p style="margin-top: 16px;">{{ level.nong }}</p>
+                            <p style="margin-top: 16px;">
+                            <a href="{{ level.audio }}" download>{{ level.nong }}</a>
+                            </p>
                             </div>
                         </li>
                     </ul>
