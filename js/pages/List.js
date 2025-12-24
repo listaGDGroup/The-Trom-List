@@ -6,6 +6,8 @@ import { fetchEditors, fetchList } from "../content.js";
 import Spinner from "../components/Spinner.js";
 import LevelAuthors from "../components/List/LevelAuthors.js";
 
+import levels from './levels.json'; // JSON com nongs e links raw .mp3
+
 const roleIconMap = {
     owner: "crown",
     admin: "user-gear",
@@ -23,7 +25,7 @@ export default {
         <main v-else class="page-list">
             <div class="list-container">
                 <table class="list" v-if="list">
-                    <tr v-for="([level, err], i) in list">
+                    <tr v-for="([level, err], i) in list" :key="i">
                         <td class="rank">
                             <p v-if="i + 1 <= 50" class="type-label-lg">#{{ i + 1 }}</p>
                             <p v-else class="type-label-lg">Legacy</p>
@@ -51,47 +53,22 @@ export default {
                             <p>{{ level.id }}</p>
                         </li>
                         <li>
-                            <template>
-  <div v-for="level in levels" :key="level.audio">
-    <div v-if="level.nong">
-      <div class="type-title-sm">Nong</div>
-      <p style="margin-top: 16px;">
-        <button @click="downloadFile(level.audio, level.nong + '.mp3')">{{ level.nong }}</button>
-      </p>
-    </div>
-  </div>
-</template>
-
-<script>
-import levels from './levels.json'; // seu arquivo JSON
-
-export default {
-  data() {
-    return { levels }
-  },
-  methods: {
-    downloadFile(url, filename) {
-      fetch(url)
-        .then(resp => resp.blob())
-        .then(blob => {
-          const link = document.createElement('a');
-          link.href = URL.createObjectURL(blob);
-          link.download = filename;
-          link.click();
-          URL.revokeObjectURL(link.href);
-        })
-        .catch(err => console.error('Erro ao baixar arquivo:', err));
-    }
-  }
-}
-</script>
-
+                            <div v-for="levelItem in levels" :key="levelItem.audio">
+                                <div v-if="levelItem.nong">
+                                    <div class="type-title-sm">Nong</div>
+                                    <p style="margin-top: 16px;">
+                                        <button @click="downloadFile(levelItem.audio, levelItem.nong + '.mp3')">
+                                            {{ levelItem.nong }}
+                                        </button>
+                                    </p>
+                                </div>
+                            </div>
                         </li>
                     </ul>
                     <h2>Records</h2>                   
-                    <p v-if="selected + 1 > 50">This This level does not accept new records.</p>
+                    <p v-if="selected + 1 > 50">This level does not accept new records.</p>
                     <table class="records">
-                        <tr v-for="record in level.records" class="record">
+                        <tr v-for="record in level.records" class="record" :key="record.user + record.percent">
                             <td class="percent">
                                 <p>{{ record.percent }}%</p>
                             </td>
@@ -114,7 +91,7 @@ export default {
             <div class="meta-container">
                 <div class="meta">
                     <div class="errors" v-show="errors.length > 0">
-                        <p class="error" v-for="error of errors">{{ error }}</p>
+                        <p class="error" v-for="error of errors" :key="error">{{ error }}</p>
                     </div>
                     <div class="og">
                         <p class="type-label-md">Website layout made by <a href="https://tsl.pages.dev/" target="_blank">TheShittyList</a></p>
@@ -122,7 +99,7 @@ export default {
                     <template v-if="editors">
                         <h3>List Editors</h3>
                         <ol class="editors">
-                            <li v-for="editor in editors">
+                            <li v-for="editor in editors" :key="editor.name">
                                 <img :src="\`/assets/\${roleIconMap[editor.role]}\${store.dark ? '-dark' : ''}.svg\`" :alt="editor.role">
                                 <a v-if="editor.link" class="type-label-lg link" target="_blank" :href="editor.link">{{ editor.name }}</a>
                                 <p v-else>{{ editor.name }}</p>
@@ -165,7 +142,8 @@ export default {
         selected: 0,
         errors: [],
         roleIconMap,
-        store
+        store,
+        levels // adiciona o JSON de nongs aqui
     }),
     computed: {
         level() {
@@ -184,11 +162,9 @@ export default {
         },
     },
     async mounted() {
-        // Hide loading spinner
         this.list = await fetchList();
         this.editors = await fetchEditors();
 
-        // Error handling
         if (!this.list) {
             this.errors = [
                 "Failed to load list. Retry in a few minutes or notify list staff.",
@@ -197,9 +173,7 @@ export default {
             this.errors.push(
                 ...this.list
                     .filter(([_, err]) => err)
-                    .map(([_, err]) => {
-                        return `Failed to load level. (${err}.json)`;
-                    })
+                    .map(([_, err]) => `Failed to load level. (${err}.json)`)
             );
             if (!this.editors) {
                 this.errors.push("Failed to load list editors.");
@@ -211,5 +185,17 @@ export default {
     methods: {
         embed,
         score,
+        downloadFile(url, filename) {
+            fetch(url)
+                .then(resp => resp.blob())
+                .then(blob => {
+                    const link = document.createElement('a');
+                    link.href = URL.createObjectURL(blob);
+                    link.download = filename;
+                    link.click();
+                    URL.revokeObjectURL(link.href);
+                })
+                .catch(err => console.error('Erro ao baixar arquivo:', err));
+        },
     },
 };
