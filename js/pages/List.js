@@ -53,33 +53,25 @@ export default {
                             <div class="type-title-sm">ID</div>
                             <p>{{ level.id }}</p>
                         </li>
+
                         <li>
                             <div class="type-title-sm">Enjoyment</div>
-                            <p>{{ level.enjoyment }}</p>
+                            <p>{{ enjoymentAverage }}</p>
                         </li>
+
                         <li>
-  <div class="type-title-sm">Nong</div>
+                            <div class="type-title-sm">Nong</div>
 
-  <span
-    v-if="level.nong"
-    class="nong-text"
-  >
-    <a :href="level.audio" target="_blank">
-      {{ level.nong }}
-    </a>
-  </span>
+                            <span v-if="level.nong" class="nong-text">
+                                <a :href="level.audio" target="_blank">
+                                    {{ level.nong }}
+                                </a>
+                            </span>
 
-  <span
-    v-else
-    class="nong-text is-empty"
-  >
-    -
-  </span>
-</li>
+                            <span v-else class="nong-text is-empty">-</span>
+                        </li>
+                    </ul>
 
-
-                        
-                     </ul>
                     <h2>Records</h2>
                     <p v-if="selected + 1 <= 25"><strong>{{ level.percentToQualify }}%</strong> or better to qualify</p>
                     <p v-else-if="selected +1 <= 50"><strong>100%</strong> or better to qualify</p>
@@ -155,6 +147,20 @@ export default {
         level() {
             return this.list[this.selected][0];
         },
+
+        enjoymentAverage() {
+            const e = this.level?.enjoyment;
+
+            if (!e) return "-";
+
+            if (Array.isArray(e)) {
+                const sum = e.reduce((a, b) => a + b, 0);
+                return (sum / e.length).toFixed(1);
+            }
+
+            return e;
+        },
+
         video() {
             if (!this.level.showcase) return embed(this.level.verification);
             return embed(this.toggledShowcase ? this.level.showcase : this.level.verification);
@@ -167,7 +173,7 @@ export default {
         if (!this.list) {
             this.errors = ["Failed to load list. Retry in a few minutes or notify list staff."];
         } else {
-            this.errors.push(...this.list.filter(([_, err]) => err).map(([_, err]) => `Failed to load level. (${err}.json)`));
+            this.errors.push(...this.list.filter(([_, err]) => err).map(([_, err]) => \`Failed to load level. (\${err}.json)\`));
             if (!this.editors) this.errors.push("Failed to load list editors.");
         }
 
