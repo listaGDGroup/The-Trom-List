@@ -11,13 +11,13 @@
             "user": "Kebab",
             "percent": 100,
             "link": "https://www.youtube.com/watch?v=1yegB5K0yNk",
-            "hz": 240
+            "hz": "240FPS"
         },
         {
             "user": "UHBatataDoce",
             "percent": 100,
             "link": "https://youtu.be/7LkzWzzK3XA",
-            "hz": 240
+            "hz": "240FPS"
         }
     ]
 }
