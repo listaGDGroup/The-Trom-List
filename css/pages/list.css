@@ -136,21 +136,9 @@
     font-family: "Lexend Deca", sans-serif;
     font-size: 17.1428571429px;
     font-weight: 500;
-
-    transform: translateY(-2px);
 }
 
 
 .page-list .level-container .level .stats .nong-text:hover {
     text-decoration: underline;
-}
-
-.page-list .level-container .level .stats p {
-    margin: 0;
-    line-height: 1.2;
-}
-
-/* Ajuste fino só do NONG */
-.page-list .level-container .level .stats li:last-child {
-    margin-top: -0.35rem;
 }
