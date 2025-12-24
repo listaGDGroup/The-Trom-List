@@ -6,5 +6,12 @@
     "verifier": "Kebab",
     "verification": "https://youtu.be/BnFXIROGPDc",
     "percentToQualify": "100",
-    "records": []
+    "records": [
+        {
+            "user": "ItzTrom",
+            "percent": 100,
+            "link": "https://youtu.be/T3Ts0YfP6Wg",
+            "hz": "720"
+        }
+    ]
 }
