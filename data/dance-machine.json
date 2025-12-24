@@ -11,12 +11,13 @@
             "user": "Kebab",
             "percent": 100,
             "link": "https://youtu.be/oDkITu6Y_Bg?si=tmscbyiZZlPkvNxK",
-            "hz": 360
-        }, {
+            "hz": "360FPS"
+        },
+        {
             "user": "ItzTrom",
             "percent": 100,
             "link": "https://youtu.be/ljAyIo06PN0",
-            "hz": 480
+            "hz": "480FPS"
         }
     ]
 }
