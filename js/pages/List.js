@@ -184,7 +184,7 @@ export default {
         if (values.length === 0) return "-";
 
         const avg = values.reduce((a, b) => a + b, 0) / values.length;
-        return avg.toFixed(1) + "%";
+        return avg.toFixed(1) + "/100";
     },
 
     video() {
