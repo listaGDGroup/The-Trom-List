@@ -53,7 +53,7 @@ export default {
                         <li>
                             <div v-if="level.nong">
                             <div class="type-title-sm">Nong</div>
-                            <p style="margin-top: 15px;">{{ level.nong }}</p>
+                            <p style="margin-top: 17px;">{{ level.nong }}</p>
                             </div>
                         </li>
                     </ul>
