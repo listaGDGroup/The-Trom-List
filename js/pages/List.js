@@ -52,6 +52,7 @@ export default {
                         <li>
                             <div class="type-title-sm">ID</div>
                             <p>{{ level.id }}</p>
+                        </li>
                         <li v-if="level.nong">
                           <div class="type-title-sm">Nong</div>
                           <p
