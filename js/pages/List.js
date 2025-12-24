@@ -48,7 +48,7 @@ export default {
                         </li>
                         <li>
                             <div class="type-title-sm">ID</div>
-                            <p>{{ level.id }}</p>
+                            <p> style="margin-top: 8px;">{{ level.nong }}</p>
                         </li>
                         <li>
                             <div v-if="level.nong">
