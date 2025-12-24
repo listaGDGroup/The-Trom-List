@@ -6,7 +6,7 @@ import { fetchEditors, fetchList } from "../content.js";
 import Spinner from "../components/Spinner.js";
 import LevelAuthors from "../components/List/LevelAuthors.js";
 
-import levels from './levels.json'; // JSON com nongs e links raw .mp3
+import levels from './levels.json'; // JSON com nongs, cada item com levelId, nong e audio
 
 const roleIconMap = {
     owner: "crown",
@@ -38,11 +38,13 @@ export default {
                     </tr>
                 </table>
             </div>
+
             <div class="level-container">
                 <div class="level" v-if="level">
                     <h1>{{ level.name }}</h1>
                     <LevelAuthors :author="level.author" :creators="level.creators" :verifier="level.verifier"></LevelAuthors>
                     <iframe class="video" id="videoframe" :src="video" frameborder="0"></iframe>
+
                     <ul class="stats">
                         <li>
                             <div class="type-title-sm">Points when completed</div>
@@ -53,19 +55,18 @@ export default {
                             <p>{{ level.id }}</p>
                         </li>
                         <li>
-                            <div v-for="levelItem in levels" :key="levelItem.audio">
-                                <div v-if="levelItem.nong">
-                                    <div class="type-title-sm">Nong</div>
-                                    <p style="margin-top: 16px;">
-                                        <button @click="downloadFile(levelItem.audio, levelItem.nong + '.mp3')">
-                                            {{ levelItem.nong }}
-                                        </button>
-                                    </p>
-                                </div>
+                            <div v-for="nong in levelNongs" :key="nong.audio">
+                                <div class="type-title-sm">Nong</div>
+                                <p style="margin-top: 16px;">
+                                    <button @click="downloadFile(nong.audio, nong.nong + '.mp3')">
+                                        {{ nong.nong }}
+                                    </button>
+                                </p>
                             </div>
                         </li>
                     </ul>
-                    <h2>Records</h2>                   
+
+                    <h2>Records</h2>
                     <p v-if="selected + 1 > 50">This level does not accept new records.</p>
                     <table class="records">
                         <tr v-for="record in level.records" class="record" :key="record.user + record.percent">
@@ -84,18 +85,22 @@ export default {
                         </tr>
                     </table>
                 </div>
+
                 <div v-else class="level" style="height: 100%; justify-content: center; align-items: center;">
                     <p>(ノಠ益ಠ)ノ彡┻━┻</p>
                 </div>
             </div>
+
             <div class="meta-container">
                 <div class="meta">
                     <div class="errors" v-show="errors.length > 0">
                         <p class="error" v-for="error of errors" :key="error">{{ error }}</p>
                     </div>
+
                     <div class="og">
                         <p class="type-label-md">Website layout made by <a href="https://tsl.pages.dev/" target="_blank">TheShittyList</a></p>
                     </div>
+
                     <template v-if="editors">
                         <h3>List Editors</h3>
                         <ol class="editors">
@@ -106,6 +111,7 @@ export default {
                             </li>
                         </ol>
                     </template>
+
                     <h3>Submission Requirements</h3>
                     <p>
                         Achieved the record without using hacks. All completions that have any type of physics bypass will not be considered legitimate. (however, FPS bypass is allowed.)
@@ -143,23 +149,27 @@ export default {
         errors: [],
         roleIconMap,
         store,
-        levels // adiciona o JSON de nongs aqui
+        levels // JSON importado
     }),
     computed: {
         level() {
-            return this.list[this.selected][0];
+            return this.list[this.selected]?.[0];
         },
         video() {
-            if (!this.level.showcase) {
-                return embed(this.level.verification);
+            if (!this.level?.showcase) {
+                return embed(this.level?.verification);
             }
-
             return embed(
                 this.toggledShowcase
                     ? this.level.showcase
                     : this.level.verification
             );
         },
+        levelNongs() {
+            if (!this.level) return [];
+            // Filtra nongs que pertencem ao nível selecionado
+            return this.levels.filter(l => l.levelId == this.level.id);
+        }
     },
     async mounted() {
         this.list = await fetchList();
