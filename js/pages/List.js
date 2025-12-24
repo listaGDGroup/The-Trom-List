@@ -52,7 +52,7 @@ export default {
                         </li>
                         <li>
                             <div class="type-title-sm">Nong</div>
-                            <p>{{ level.password }}</p>
+                            <p>{{ level.nong }}</p>
                         </li>
                     </ul>
                     <h2>Records</h2>
