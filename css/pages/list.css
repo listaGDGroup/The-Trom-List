@@ -142,6 +142,12 @@
     text-decoration: underline;
 }
 
+/* Correção de alinhamento SOMENTE do NONG */
+.page-list .level-container .level .stats li:last-child .nong-text {
+    position: relative;
+    top: -0.5rem;
+}
+
 /* Quando NÃO existe nong */
 .page-list .level-container .level .stats .nong-text.is-empty {
     cursor: default;
