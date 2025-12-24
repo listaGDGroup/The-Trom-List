@@ -1,13 +1,3 @@
-.nong-link {
-    color: inherit;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.nong-link:hover {
-    text-decoration: underline;
-}
-
 :root {
     --color-background: white;
     --color-on-background: white;
