@@ -63,12 +63,13 @@ export default {
                           {{ level.nong }}
                         </a>
                         </li>
-                     </ul>
 
                         <li>
                             <div class="type-title-sm">Enjoyement</div>
                             <p>{{ level.enjoyement }}</p>
                         </li>
+                        
+                     </ul>
                     <h2>Records</h2>
                     <p v-if="selected + 1 <= 25"><strong>{{ level.percentToQualify }}%</strong> or better to qualify</p>
                     <p v-else-if="selected +1 <= 50"><strong>100%</strong> or better to qualify</p>
