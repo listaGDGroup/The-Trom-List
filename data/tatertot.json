@@ -11,23 +11,23 @@
             "user": "ItzTrom",
             "percent": 100,
             "link": "https://youtu.be/MVFcBOwMft4",
-            "hz": "480"
+            "hz": "480FPS"
         }, {
             "user": "UHBatataDoce",
             "percent": 100,
             "link": "https://youtu.be/vPn00uABaLw",
-            "hz": 240
+            "hz": "240FPS"
         }, {
             "user": "Kebab",
             "percent": 100,
             "link": "https://www.youtube.com/watch?v=ans5KEhOTbI",
-            "hz": 240
+            "hz": "240FPS"
         },
         {
             "user": "Mofoy",
             "percent": 100,
             "link": "https://youtu.be/bzZxmA1-CRs?si=afc85MXS-L8icstJ",
-            "hz": 60,
+            "hz": "60FPS",
             "mobile": true
         }
     ]
