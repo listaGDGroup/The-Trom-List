@@ -52,13 +52,9 @@ export default {
                             <div class="type-title-sm">ID</div>
                             <p>{{ level.id }}</p>
                         </li>
-                        <li v-if="level.nong && level.audio">
+                        <li v-if="level.nong">
                             <div class="type-title-sm">Nong</div>
-                            <p style="margin-top: 16px;">
-                                <button @click="downloadFile(level.audio, level.nong + '.mp3')">
-                                    {{ level.nong }}
-                                </button>
-                            </p>
+                            <p>{{ level.nong }}</p>
                         </li>
                     </ul>
 
@@ -181,21 +177,5 @@ export default {
         }
 
         this.loading = false;
-    },
-    methods: {
-        embed,
-        score,
-        downloadFile(url, filename) {
-            fetch(url)
-                .then(resp => resp.blob())
-                .then(blob => {
-                    const link = document.createElement('a');
-                    link.href = URL.createObjectURL(blob);
-                    link.download = filename;
-                    link.click();
-                    URL.revokeObjectURL(link.href);
-                })
-                .catch(err => console.error('Erro ao baixar arquivo:', err));
-        }
     }
 };
