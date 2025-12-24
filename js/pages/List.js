@@ -184,7 +184,7 @@ export default {
     if (Number.isInteger(avg)) {
         return avg + "%";
     } else {
-        return avg.toFixed(2).replace(/\.?0+$/, "") + "%";
+        return avg.toFixed(2).replace(/\.?0+$/, "") + "/100";
         // toFixed(2) fixa 2 casas, e replace remove zeros desnecessários
     }
 },
