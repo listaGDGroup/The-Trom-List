@@ -148,3 +148,28 @@
     position: relative;
     top: -0.49rem;
 }
+
+/* === NONG LINK BEHAVIOR === */
+.page-list .level-container .level .stats .nong-text {
+    color: inherit;
+    font-family: "Lexend Deca", sans-serif;
+    font-size: 17.1428571429px;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.page-list .level-container .level .stats .nong-text:hover {
+    text-decoration: underline;
+}
+
+/* quando NÃO tem nong */
+.page-list .level-container .level .stats .nong-text.is-empty {
+    cursor: default;
+    text-decoration: none !important;
+    opacity: 0.6;
+}
+
+.page-list .level-container .level .stats .nong-text.is-empty:hover {
+    text-decoration: none;
+}
