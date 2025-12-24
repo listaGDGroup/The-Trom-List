@@ -24,12 +24,11 @@ export function score(rank, percent, minPercent) {
         ((percent - (minPercent - 1)) / (100 - (minPercent - 1)));
     */
     // New formula
-   const r = Number(rank);
-const p = Number(percent);
-const m = Number(minPercent);
+const r = Number(rank);
+const p = Number.isFinite(Number(percent)) ? Number(percent) : 100;
+const m = Number.isFinite(Number(minPercent)) ? Number(minPercent) : 100;
 
-// Se qualquer coisa estiver errada, score = 0
-if (!Number.isFinite(r) || !Number.isFinite(p) || !Number.isFinite(m)) {
+if (!Number.isFinite(r)) {
   return 0;
 }
 
