@@ -30,7 +30,7 @@ export default {
                         </td>
                         <td class="level" :class="{ 'active': selected == i, 'error': !level }">
                             <button @click="selected = i">
-                                <span class="type-label-lg">{{ level?.name || \`Error (\${err}.json)\` }}</span>
+                                <span class="type-label-lg">{{ level?.name || \`Error (\${err})\` }}</span>
                             </button>
                         </td>
                     </tr>
@@ -158,22 +158,24 @@ export default {
         }
     },
     async mounted() {
-        this.list = await fetchList();
-        this.editors = await fetchEditors();
+        try {
+            this.list = await fetchList();
+            this.editors = await fetchEditors();
 
-        if (!this.list) {
-            this.errors = [
-                "Failed to load list. Retry in a few minutes or notify list staff.",
-            ];
-        } else {
-            this.errors.push(
-                ...this.list
-                    .filter(([_, err]) => err)
-                    .map(([_, err]) => `Failed to load level. (${err}.json)`)
-            );
-            if (!this.editors) {
-                this.errors.push("Failed to load list editors.");
+            if (!this.list) {
+                this.errors = ["Failed to load list. Retry in a few minutes or notify list staff."];
+            } else {
+                this.errors.push(
+                    ...this.list
+                        .filter(([_, err]) => err)
+                        .map(([_, err]) => `Failed to load level. (${err})`)
+                );
+                if (!this.editors) {
+                    this.errors.push("Failed to load list editors.");
+                }
             }
+        } catch (err) {
+            this.errors.push("Error fetching data: " + err);
         }
 
         this.loading = false;
