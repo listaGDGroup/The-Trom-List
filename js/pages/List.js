@@ -157,21 +157,24 @@ export default {
     },
 
     enjoymentAverage() {
-        const e = this.level?.enjoyment;
-        if (!e || !Array.isArray(e) || e.length === 0) return "-";
+    let e = this.level?.enjoyment;
+    if (!e) return "-";
 
-        const values = e.map(v => {
-            let text = v.replace(",", ".").trim();
-            let [num, base] = text.split("/").map(Number);
-            if (!num || !base) return null;
-            return (num / base) * 100;
-        }).filter(v => v !== null);
+    // Transformar string única em array
+    if (typeof e === "string") e = [e];
 
-        if (values.length === 0) return "-";
+    const values = e.map(v => {
+        let text = v.replace(",", ".").trim();
+        let [num, base] = text.split("/").map(Number);
+        if (!num || !base) return null;
+        return (num / base) * 100;
+    }).filter(v => v !== null);
 
-        const avg = values.reduce((a, b) => a + b, 0) / values.length;
-        return avg.toFixed(1) + "%";
-    },
+    if (values.length === 0) return "-";
+
+    const avg = values.reduce((a, b) => a + b, 0) / values.length;
+    return avg.toFixed(1) + "%";
+}
 
     video() {
         if (!this.level.showcase) return embed(this.level.verification);
