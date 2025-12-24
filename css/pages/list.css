@@ -136,6 +136,8 @@
     font-family: "Lexend Deca", sans-serif;
     font-size: 17.1428571429px;
     font-weight: 700;
+
+    transform: translateY(1)
 }
 
 
