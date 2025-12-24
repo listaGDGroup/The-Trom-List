@@ -55,7 +55,7 @@ export default {
                         </li>
                         <li>
                             <div class="type-title-sm">Enjoyment</div>
-                            <p>{{ level.enjoyment }}</p>
+                            <p>{{ enjoymentAverage }}</p>
                         </li>
                         <li>
   <div class="type-title-sm">Nong</div>
@@ -152,14 +152,32 @@ export default {
         store
     }),
     computed: {
-        level() {
-            return this.list[this.selected][0];
-        },
-        video() {
-            if (!this.level.showcase) return embed(this.level.verification);
-            return embed(this.toggledShowcase ? this.level.showcase : this.level.verification);
-        },
+    level() {
+        return this.list[this.selected][0];
     },
+
+    enjoymentAverage() {
+        const e = this.level?.enjoyment;
+        if (!e || !Array.isArray(e) || e.length === 0) return "-";
+
+        const values = e.map(v => {
+            let text = v.replace(",", ".").trim();
+            let [num, base] = text.split("/").map(Number);
+            if (!num || !base) return null;
+            return (num / base) * 100;
+        }).filter(v => v !== null);
+
+        if (values.length === 0) return "-";
+
+        const avg = values.reduce((a, b) => a + b, 0) / values.length;
+        return avg.toFixed(1) + "%";
+    },
+
+    video() {
+        if (!this.level.showcase) return embed(this.level.verification);
+        return embed(this.toggledShowcase ? this.level.showcase : this.level.verification);
+    },
+},
     async mounted() {
         this.list = await fetchList();
         this.editors = await fetchEditors();
