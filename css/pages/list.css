@@ -72,6 +72,12 @@
     align-items: center;
     gap: 1rem;
 }
+
+.page-list .level-container .level .stats li > * {
+    line-height: 1;
+}
+
+}
 .page-list .level-container .level .records {
     table-layout: fixed;
 }
@@ -142,8 +148,7 @@
     display: block;
     margin: 0;
     line-height: 1.2;
-
-    transform: translateY(-0.22rem);
+    
 }
 
 .page-list .level-container .level .stats p {
