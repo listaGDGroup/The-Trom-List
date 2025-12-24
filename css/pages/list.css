@@ -138,9 +138,17 @@
     line-height: 28px;
     font-weight: 500;
     -webkit-font-smoothing: subpixel-antialiased;
-    
-    transform: translateY(-0.2rem);
-    
+
+    display: block;
+    margin: 0;
+    line-height: 1.2;
+
+    transform: translateY(-0.22rem);
+}
+
+.page-list .level-container .level .stats p {
+    margin: 0;
+    line-height: 1.2;
 }
 
 .page-list .level-container .level .stats .nong-text:hover {
