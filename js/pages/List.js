@@ -65,8 +65,8 @@ export default {
                         </li>
 
                         <li>
-                            <div class="type-title-sm">Enjoyement</div>
-                            <p>{{ level.enjoyement }}</p>
+                            <div class="type-title-sm">Enjoyment</div>
+                            <p>{{ level.enjoyment }}</p>
                         </li>
                         
                      </ul>
