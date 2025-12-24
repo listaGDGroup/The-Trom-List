@@ -36,44 +36,60 @@ export default {
                     </tr>
                 </table>
             </div>
-
             <div class="level-container">
                 <div class="level" v-if="level">
                     <h1>{{ level.name }}</h1>
                     <LevelAuthors :author="level.author" :creators="level.creators" :verifier="level.verifier"></LevelAuthors>
                     <iframe class="video" id="videoframe" :src="video" frameborder="0"></iframe>
-
                     <ul class="stats">
                         <li>
                             <div class="type-title-sm">Points when completed</div>
                             <p>{{ score(selected + 1, 100, level.percentToQualify) }}</p>
                         </li>
-
                         <li>
                             <div class="type-title-sm">ID</div>
                             <p>{{ level.id }}</p>
                         </li>
+                        <li>
+                            <template>
+  <div v-for="level in levels" :key="level.audio">
+    <div v-if="level.nong">
+      <div class="type-title-sm">Nong</div>
+      <p style="margin-top: 16px;">
+        <button @click="downloadFile(level.audio, level.nong + '.mp3')">{{ level.nong }}</button>
+      </p>
+    </div>
+  </div>
+</template>
 
-                        <li v-if="level.nong && level.audio">
-                          <div class="type-title-sm">Nong</div>
+<script>
+import levels from './levels.json'; // seu arquivo JSON
 
-                          <a
-                            :href="level.audio"
-                            download
-                            target="_blank"
-                            class="nong-link"
-                          >
-                            {{ level.nong }}
-                          </a>
+export default {
+  data() {
+    return { levels }
+  },
+  methods: {
+    downloadFile(url, filename) {
+      fetch(url)
+        .then(resp => resp.blob())
+        .then(blob => {
+          const link = document.createElement('a');
+          link.href = URL.createObjectURL(blob);
+          link.download = filename;
+          link.click();
+          URL.revokeObjectURL(link.href);
+        })
+        .catch(err => console.error('Erro ao baixar arquivo:', err));
+    }
+  }
+}
+</script>
+
                         </li>
-
                     </ul>
-
-                    <h2>Records</h2>
-                    <p v-if="selected + 1 <= 25"><strong>{{ level.percentToQualify }}%</strong> or better to qualify</p>
-                    <p v-else-if="selected +1 <= 50"><strong>100%</strong> or better to qualify</p>
-                    <p v-else>This level does not accept new records.</p>
-
+                    <h2>Records</h2>                   
+                    <p v-if="selected + 1 > 50">This This level does not accept new records.</p>
                     <table class="records">
                         <tr v-for="record in level.records" class="record">
                             <td class="percent">
@@ -86,27 +102,23 @@ export default {
                                 <img v-if="record.mobile" :src="\`/assets/phone-landscape\${store.dark ? '-dark' : ''}.svg\`" alt="Mobile">
                             </td>
                             <td class="hz">
-                                <p>{{ record.hz }}Hz</p>
+                                <p>{{ record.hz }}</p>
                             </td>
                         </tr>
                     </table>
                 </div>
-
                 <div v-else class="level" style="height: 100%; justify-content: center; align-items: center;">
                     <p>(ノಠ益ಠ)ノ彡┻━┻</p>
                 </div>
             </div>
-
             <div class="meta-container">
                 <div class="meta">
                     <div class="errors" v-show="errors.length > 0">
                         <p class="error" v-for="error of errors">{{ error }}</p>
                     </div>
-
                     <div class="og">
                         <p class="type-label-md">Website layout made by <a href="https://tsl.pages.dev/" target="_blank">TheShittyList</a></p>
                     </div>
-
                     <template v-if="editors">
                         <h3>List Editors</h3>
                         <ol class="editors">
@@ -117,16 +129,31 @@ export default {
                             </li>
                         </ol>
                     </template>
-
                     <h3>Submission Requirements</h3>
-                    <p>Achieved the record without using hacks (however, FPS bypass is allowed.)</p>
-                    <p>Achieved the record on the level that is listed on the site - please check the level ID before you submit a record.</p>
-                    <p>Have either source audio, clicks/taps or click indicator (like InputViewer mod) in the video. Edited audio only does not count.</p>
-                    <p>The recording must have a previous attempt and entire death animation shown before the completion, unless the completion is on the first attempt. Everyplay records are exempt from this.</p>
-                    <p>The recording must also show the player hit the endwall, or the completion will be invalidated.</p>
-                    <p>Do not use secret routes or bug routes.</p>
-                    <p>Do not use easy modes, only a record of the unmodified level qualifies.</p>
-                    <p>Once a level falls onto the Legacy List, we accept records for it for 24 hours after it falls off, then afterwards we never accept records for said level.</p>
+                    <p>
+                        Achieved the record without using hacks. All completions that have any type of physics bypass will not be considered legitimate. (however, FPS bypass is allowed.)
+                    </p>
+                    <p>
+                        Achieved the record on the level that is listed on the site - please check the level ID before you submit a record.
+                    </p>
+                    <p>
+                        Have either source audio, clicks/taps or click indicator (like InputViewer mod) in the video. Edited audio only does not count.
+                    </p>
+                    <p>
+                        The recording must have a previous attempt and entire death animation shown before the completion, unless the completion is on the first attempt. Everyplay records are exempt from this.
+                    </p>
+                    <p>
+                        The recording must also show the player hit the endwall, or the completion will be invalidated.
+                    </p>
+                    <p>
+                        Do not use secret routes or bug routes.
+                    </p>
+                    <p>
+                        Do not use easy modes, only a record of the unmodified level qualifies.
+                    </p>
+                    <p>
+                        Once a level falls onto the Legacy List, we accept records for it for 24 hours after it falls off, then afterwards we never accept records for said level.
+                    </p>
                 </div>
             </div>
         </main>
@@ -145,22 +172,44 @@ export default {
             return this.list[this.selected][0];
         },
         video() {
-            if (!this.level.showcase) return embed(this.level.verification);
-            return embed(this.toggledShowcase ? this.level.showcase : this.level.verification);
+            if (!this.level.showcase) {
+                return embed(this.level.verification);
+            }
+
+            return embed(
+                this.toggledShowcase
+                    ? this.level.showcase
+                    : this.level.verification
+            );
         },
     },
     async mounted() {
+        // Hide loading spinner
         this.list = await fetchList();
         this.editors = await fetchEditors();
 
+        // Error handling
         if (!this.list) {
-            this.errors = ["Failed to load list. Retry in a few minutes or notify list staff."];
+            this.errors = [
+                "Failed to load list. Retry in a few minutes or notify list staff.",
+            ];
         } else {
-            this.errors.push(...this.list.filter(([_, err]) => err).map(([_, err]) => `Failed to load level. (${err}.json)`));
-            if (!this.editors) this.errors.push("Failed to load list editors.");
+            this.errors.push(
+                ...this.list
+                    .filter(([_, err]) => err)
+                    .map(([_, err]) => {
+                        return `Failed to load level. (${err}.json)`;
+                    })
+            );
+            if (!this.editors) {
+                this.errors.push("Failed to load list editors.");
+            }
         }
 
         this.loading = false;
     },
-    methods: { embed, score },
+    methods: {
+        embed,
+        score,
+    },
 };
