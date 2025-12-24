@@ -6,8 +6,6 @@ import { fetchEditors, fetchList } from "../content.js";
 import Spinner from "../components/Spinner.js";
 import LevelAuthors from "../components/List/LevelAuthors.js";
 
-import levels from './levels.json'; // JSON com nongs, cada item com levelId, nong e audio
-
 const roleIconMap = {
     owner: "crown",
     admin: "user-gear",
@@ -54,15 +52,13 @@ export default {
                             <div class="type-title-sm">ID</div>
                             <p>{{ level.id }}</p>
                         </li>
-                        <li>
-                            <div v-for="nong in levelNongs" :key="nong.audio">
-                                <div class="type-title-sm">Nong</div>
-                                <p style="margin-top: 16px;">
-                                    <button @click="downloadFile(nong.audio, nong.nong + '.mp3')">
-                                        {{ nong.nong }}
-                                    </button>
-                                </p>
-                            </div>
+                        <li v-if="level.nong && level.audio">
+                            <div class="type-title-sm">Nong</div>
+                            <p style="margin-top: 16px;">
+                                <button @click="downloadFile(level.audio, level.nong + '.mp3')">
+                                    {{ level.nong }}
+                                </button>
+                            </p>
                         </li>
                     </ul>
 
@@ -148,8 +144,7 @@ export default {
         selected: 0,
         errors: [],
         roleIconMap,
-        store,
-        levels // JSON importado
+        store
     }),
     computed: {
         level() {
@@ -164,11 +159,6 @@ export default {
                     ? this.level.showcase
                     : this.level.verification
             );
-        },
-        levelNongs() {
-            if (!this.level) return [];
-            // Filtra nongs que pertencem ao nível selecionado
-            return this.levels.filter(l => l.levelId == this.level.id);
         }
     },
     async mounted() {
@@ -206,6 +196,6 @@ export default {
                     URL.revokeObjectURL(link.href);
                 })
                 .catch(err => console.error('Erro ao baixar arquivo:', err));
-        },
-    },
+        }
+    }
 };
