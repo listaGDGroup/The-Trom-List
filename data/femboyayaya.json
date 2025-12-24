@@ -11,7 +11,7 @@
             "user": "UHBatataDoce",
             "percent": 100,
             "link": "https://youtu.be/QjHSmftbu1Y",
-            "hz": 240
+            "hz": "240FPS"
         },
         {
             "user": "ItzTrom",
@@ -23,7 +23,7 @@
             "user": "Trozu",
             "percent": 100,
             "link": "https://youtu.be/X7jEvHQOTp8",
-            "hz": 480
+            "hz": "480FPS"
         }
     ]
 }
