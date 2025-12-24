@@ -55,9 +55,16 @@ export default {
                         </li>
 
                         <li v-if="level.nong">
-                            <div class="type-title-sm">Nong</div>
-                            <p>{{ level.nong }}</p>
-                        </li>
+                      <div class="type-title-sm">Nong</div>
+                      <p
+                        onmouseover="this.style.textDecoration='underline'"
+                        onmouseout="this.style.textDecoration='none'"
+                        style="cursor: pointer;"
+                      >
+                        {{ level.nong }}
+                      </p>
+                    </li>
+
                     </ul>
 
                     <h2>Records</h2>
