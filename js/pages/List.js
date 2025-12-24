@@ -55,13 +55,14 @@ export default {
                         </li>
                         <li v-if="level.nong">
                           <div class="type-title-sm">Nong</div>
-                          <p
-                            onmouseover="this.style.textDecoration='underline'"
-                            onmouseout="this.style.textDecoration='none'"
-                            style="cursor: pointer;"
-                          >
-                            {{ level.nong }}
-                          </p>
+                          <a
+                          :href="level.audio"
+                          target="_blank"
+                          class="nong-text"
+                        >
+                          {{ level.nong }}
+                        </a>
+
                         </li>
                     </ul>
 
