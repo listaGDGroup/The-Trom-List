@@ -11,19 +11,19 @@
             "user": "GuilhermeKoji",
             "percent": 100,
             "link": "https://youtu.be/Fd7Ar4eM7uQ",
-            "hz": 240
+            "hz": "240FPS"
         },
         {
             "user": "Kebab",
             "percent": 100,
             "link": "https://youtu.be/BPDINd2qdXg",
-            "hz": 480
+            "hz": "480FPS"
         },
         {
             "user": "Mofoy",
             "percent": 100,
             "link": "https://youtu.be/PkXSqta3hz0?si=AhF_N-l-Ra8tqSMY",
-            "hz": 83728400
+            "hz": "83728400FPS"
         }
     ]
 }
