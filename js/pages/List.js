@@ -51,12 +51,41 @@ export default {
                             <p>{{ level.id }}</p>
                         </li>
                         <li>
-                            <div v-if="level.nong">
-                                <div class="type-title-sm">Nong</div>
-                                    <p style="margin-top: 16px;">
-                                    <a :href="level.audio" download>{{ level.nong }}</a>
-                                    </p>
-                            </div>
+                            <template>
+  <div v-for="level in levels" :key="level.audio">
+    <div v-if="level.nong">
+      <div class="type-title-sm">Nong</div>
+      <p style="margin-top: 16px;">
+        <button @click="downloadFile(level.audio, level.nong + '.mp3')">{{ level.nong }}</button>
+      </p>
+    </div>
+  </div>
+</template>
+
+<script>
+import levels from './levels.json'; // seu arquivo JSON
+
+export default {
+  data() {
+    return { levels }
+  },
+  methods: {
+    downloadFile(url, filename) {
+      fetch(url)
+        .then(resp => resp.blob())
+        .then(blob => {
+          const link = document.createElement('a');
+          link.href = URL.createObjectURL(blob);
+          link.download = filename;
+          link.click();
+          URL.revokeObjectURL(link.href);
+        })
+        .catch(err => console.error('Erro ao baixar arquivo:', err));
+    }
+  }
+}
+</script>
+
                         </li>
                     </ul>
                     <h2>Records</h2>                   
