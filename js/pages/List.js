@@ -182,7 +182,7 @@ export default {
 
     // Aqui formatamos
     if (Number.isInteger(avg)) {
-        return avg + "%";
+        return avg + "/100";
     } else {
         return avg.toFixed(2).replace(/\.?0+$/, "") + "/100";
         // toFixed(2) fixa 2 casas, e replace remove zeros desnecessários
