@@ -14,19 +14,6 @@ const roleIconMap = {
     trial: "user-lock",
 };
 
-const style = document.createElement("style");
-style.innerHTML = `
-.nong-download {
-    cursor: pointer;
-    user-select: none;
-}
-
-.nong-download:hover {
-    text-decoration: underline;
-}
-`;
-document.head.appendChild(style);
-
 export default {
     components: { Spinner, LevelAuthors },
     template: `
@@ -70,12 +57,14 @@ export default {
                         <li v-if="level.nong && level.audio">
                           <div class="type-title-sm">Nong</div>
 
-                          <span
-                            class="nong-download"
-                            @click="window.open(level.audio, '_blank')"
+                          <a
+                            :href="level.audio"
+                            download
+                            target="_blank"
+                            class="nong-link"
                           >
                             {{ level.nong }}
-                          </span>
+                          </a>
                         </li>
 
                     </ul>
