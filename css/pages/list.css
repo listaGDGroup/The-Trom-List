@@ -150,8 +150,5 @@
 .page-list .level-container .level .stats p {
     margin: 0;
     line-height: 1.2;
-}
-
-.page-list .level-container .level .stats .nong-text:hover {
-    text-decoration: underline;
+    
 }
