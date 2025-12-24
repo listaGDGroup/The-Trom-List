@@ -60,20 +60,23 @@ export default {
                         <li>
   <div class="type-title-sm">Nong</div>
 
-  <template v-if="level.nong">
-    <a
-      :href="level.audio"
-      target="_blank"
-      class="nong-text"
-    >
+  <span
+    v-if="level.nong"
+    class="nong-text"
+  >
+    <a :href="level.audio" target="_blank">
       {{ level.nong }}
     </a>
-  </template>
+  </span>
 
-  <template v-else>
-    <span class="nong-text">-</span>
-  </template>
+  <span
+    v-else
+    class="nong-text is-empty"
+  >
+    -
+  </span>
 </li>
+
 
                         
                      </ul>
