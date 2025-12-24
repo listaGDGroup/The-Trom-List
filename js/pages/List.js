@@ -157,35 +157,38 @@ export default {
     },
 
     enjoymentAverage() {
-        let e = this.level?.enjoyment;
-        if (!e) return "-";
+    let e = this.level?.enjoyment;
+    if (!e) return "-";
 
-        // Sempre transforma em array
-        if (typeof e === "string") e = [e];
+    if (typeof e === "string") e = [e];
 
-        const values = e.map(v => {
-            if (!v) return null;
+    const values = e.map(v => {
+        if (!v) return null;
 
-            // Remove espaços e troca vírgula por ponto
-            let text = v.trim().replace(",", ".");
+        let text = v.trim().replace(",", ".");
+        const match = text.match(/(\d+(\.\d+)?)\s*\/\s*(\d+(\.\d+)?)/);
+        if (!match) return null;
 
-            // Tenta extrair números antes e depois da barra
-            const match = text.match(/(\d+(\.\d+)?)\s*\/\s*(\d+(\.\d+)?)/);
-            if (!match) return null;
+        const num = parseFloat(match[1]);
+        const base = parseFloat(match[3]);
+        if (isNaN(num) || isNaN(base) || base === 0) return null;
 
-            const num = parseFloat(match[1]);
-            const base = parseFloat(match[3]);
+        return (num / base) * 100;
+    }).filter(v => v !== null);
 
-            if (isNaN(num) || isNaN(base) || base === 0) return null;
+    if (values.length === 0) return "-";
 
-            return (num / base) * 100;
-        }).filter(v => v !== null);
+    const avg = values.reduce((a, b) => a + b, 0) / values.length;
 
-        if (values.length === 0) return "-";
+    // Aqui formatamos
+    if (Number.isInteger(avg)) {
+        return avg + "%";
+    } else {
+        return avg.toFixed(2).replace(/\.?0+$/, "") + "%";
+        // toFixed(2) fixa 2 casas, e replace remove zeros desnecessários
+    }
+},
 
-        const avg = values.reduce((a, b) => a + b, 0) / values.length;
-        return avg.toFixed(1) + "/100";
-    },
 
     video() {
         if (!this.level.showcase) return embed(this.level.verification);
