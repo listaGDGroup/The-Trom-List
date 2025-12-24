@@ -132,6 +132,9 @@
     text-decoration: none;
     cursor: pointer;
     transition: text-decoration 0.15s ease;
+
+    font-family: "Lexend Deca", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 500;
 }
 
 .page-list .level-container .level .stats .nong-text:hover {
