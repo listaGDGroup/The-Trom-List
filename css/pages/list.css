@@ -70,8 +70,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
-
+    gap: 0.25rem;
 }
 
 .page-list .level-container .level .records {
@@ -141,12 +140,6 @@
 /* Hover apenas quando é link */
 .page-list .level-container .level .stats .nong-text:hover {
     text-decoration: underline;
-}
-
-/* Correção de alinhamento SOMENTE do NONG */
-.page-list .level-container .level .stats li:last-child .nong-text {
-    position: relative;
-    top: -0.49rem;
 }
 
 /* Quando NÃO existe nong */
