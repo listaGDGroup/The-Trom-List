@@ -54,16 +54,19 @@ export default {
                             <p>{{ level.id }}</p>
                         </li>
 
-                        <li v-if="level.nong">
-                      <div class="type-title-sm">Nong</div>
-                      <p
-                        onmouseover="this.style.textDecoration='underline'"
-                        onmouseout="this.style.textDecoration='none'"
-                        style="cursor: pointer;"
-                      >
-                        {{ level.nong }}
-                      </p>
-                    </li>
+                        <li v-if="level.nong && level.audio">
+                          <div class="type-title-sm">Nong</div>
+
+                          <p
+                            class="nong-link"
+                            @click="downloadAudio(level.audio)"
+                            onmouseover="this.style.textDecoration='underline'"
+                            onmouseout="this.style.textDecoration='none'"
+                            style="cursor: pointer;"
+                          >
+                            {{ level.nong }}
+                          </p>
+                        </li>
 
                     </ul>
 
