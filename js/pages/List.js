@@ -58,13 +58,19 @@ export default {
                           <div class="type-title-sm">Nong</div>
 
                           <a
-                            :href="level.audio"
-                            download
-                            target="_blank"
-                            class="nong-link"
-                          >
-                            {{ level.nong }}
-                          </a>
+                          :href="level.audio"
+                          download
+                          target="_blank"
+                          style="
+                            color: inherit;
+                            text-decoration: none;
+                            cursor: pointer;
+                          "
+                          onmouseover="this.style.textDecoration='underline'"
+                          onmouseout="this.style.textDecoration='none'"
+                        >
+                          {{ level.nong }}
+                        </a>
                         </li>
 
                     </ul>
