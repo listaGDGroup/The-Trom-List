@@ -40,21 +40,19 @@ if (denom <= 0) {
   return 0;
 }
 
-let score = base * ((p - (m - 1)) / denom);
+let rawScore = base * ((p - (m - 1)) / denom);
 
-// Garante número válido
-if (!Number.isFinite(score)) {
-  return 0;
+if (!Number.isFinite(rawScore)) {
+    return 0;
 }
 
-return Math.max(0, score);
+// Se não for 100%, aplica penalidade
+if (p !== 100) {
+    return Math.max(round(rawScore - rawScore / 3), 0);
+}
 
-
-    if (percent != 100) {
-        return round(score - score / 3);
-    }
-
-    return Math.max(round(score), 0);
+// 100% → score cheio
+return Math.max(round(rawScore), 0);
 }
 
 export function round(num) {
