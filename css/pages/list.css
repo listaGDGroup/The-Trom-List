@@ -1,13 +1,3 @@
-.nong-link {
-    color: inherit;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.nong-link:hover {
-    text-decoration: underline;
-}
-
 .page-list .list-container,
 .page-list .level-container,
 .page-list .meta-container {
