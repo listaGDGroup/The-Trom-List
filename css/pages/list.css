@@ -146,7 +146,6 @@
 .page-list .level-container .level .stats .nong-text.is-empty {
     cursor: default;
     text-decoration: none !important;
-    opacity: 0.6;
 }
 
 .page-list .level-container .level .stats .nong-text.is-empty:hover {
