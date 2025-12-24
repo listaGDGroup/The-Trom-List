@@ -126,3 +126,14 @@
 .page-list .meta .editors li a:hover {
     text-decoration: underline;
 }
+/* === NONG LINK === */
+.page-list .level-container .level .stats .nong-text {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    transition: text-decoration 0.15s ease;
+}
+
+.page-list .level-container .level .stats .nong-text:hover {
+    text-decoration: underline;
+}
