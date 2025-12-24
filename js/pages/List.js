@@ -55,7 +55,7 @@ export default {
                         </li>
                         <li>
                             <div class="type-title-sm">Enjoyment</div>
-                            <p>{{ level.enjoyment }}</p>
+                            <p>{{ enjoymentAverage }}</p>
                         </li>
                         <li>
   <div class="type-title-sm">Nong</div>
@@ -152,14 +152,47 @@ export default {
         store
     }),
     computed: {
-        level() {
-            return this.list[this.selected][0];
-        },
-        video() {
-            if (!this.level.showcase) return embed(this.level.verification);
-            return embed(this.toggledShowcase ? this.level.showcase : this.level.verification);
-        },
+    level() {
+        return this.list[this.selected][0];
     },
+
+    enjoymentAverage() {
+        let e = this.level?.enjoyment;
+        if (!e) return "-";
+
+        // Sempre transforma em array
+        if (typeof e === "string") e = [e];
+
+        const values = e.map(v => {
+            if (!v) return null;
+
+            // Remove espaços e troca vírgula por ponto
+            let text = v.trim().replace(",", ".");
+
+            // Tenta extrair números antes e depois da barra
+            const match = text.match(/(\d+(\.\d+)?)\s*\/\s*(\d+(\.\d+)?)/);
+            if (!match) return null;
+
+            const num = parseFloat(match[1]);
+            const base = parseFloat(match[3]);
+
+            if (isNaN(num) || isNaN(base) || base === 0) return null;
+
+            return (num / base) * 100;
+        }).filter(v => v !== null);
+
+        if (values.length === 0) return "-";
+
+        const avg = values.reduce((a, b) => a + b, 0) / values.length;
+        return avg.toFixed(1) + "%";
+    },
+
+    video() {
+        if (!this.level.showcase) return embed(this.level.verification);
+        return embed(this.toggledShowcase ? this.level.showcase : this.level.verification);
+    },
+},
+    
     async mounted() {
         this.list = await fetchList();
         this.editors = await fetchEditors();
