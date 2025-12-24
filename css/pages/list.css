@@ -145,7 +145,7 @@
 /* Correção de alinhamento SOMENTE do NONG */
 .page-list .level-container .level .stats li:last-child .nong-text {
     position: relative;
-    top: -0.41rem;
+    top: -0.35rem;
 }
 
 /* Quando NÃO existe nong */
