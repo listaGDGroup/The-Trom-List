@@ -11,19 +11,19 @@
             "user": "Kebab",
             "percent": 100,
             "link": "https://www.youtube.com/watch?v=Xtl0-QoKwE4",
-            "hz": 240
+            "hz": "240FPS"
         },
         {
             "user": "Trozu",
             "percent": 100,
             "link": "https://youtu.be/ru7rG23plaE?si=SFOS6Jjmlqu7YDkY",
-            "hz": 480
+            "hz": "480FPS"
         },
         {
             "user": "ItzTrom",
             "percent": 100,
             "link": "https://youtu.be/sbX9tIQEno8",
-            "hz": 720
+            "hz": "720FPS"
         }
     ]
 }
