@@ -61,6 +61,7 @@ export default {
                           class="nong-text"
                         >
                           {{ level.nong }}
+                          class="song-text"
                         </a>
 
                         </li>
