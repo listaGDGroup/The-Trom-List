@@ -133,8 +133,11 @@
     cursor: pointer;
     transition: text-decoration 0.15s ease;
 
-    font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-    font-weight: 500;
+    font-family: "Lexend Deca", sans-serif;
+    font-size: 22.8571428571px;
+    line-height: 28px;
+    font-weight: 700;
+    -webkit-font-smoothing: subpixel-antialiased;
 }
 
 .page-list .level-container .level .stats .nong-text:hover {
