@@ -72,6 +72,8 @@
     align-items: center;
     gap: 1rem;
 
+}
+
     .page-list .level-container .level .stats li {
     gap: 0.35rem;
         
