@@ -7,5 +7,12 @@
     "verification": "https://youtu.be/iEQZZrBRElI",
     "percentToQualify": "100",
     "enjoyment": "59/100",
-    "records": []
+    "records": [
+        {
+            "user": "Kebab",
+            "percent": 100,
+            "link": "https://youtu.be/kLe1lMEBNwc",
+            "hz": "720FPS"
+        }
+    ]
 }
