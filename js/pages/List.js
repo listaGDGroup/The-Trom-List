@@ -44,6 +44,11 @@ export default {
                     <iframe class="video" id="videoframe" :src="video" frameborder="0"></iframe>
 
                     <ul class="stats">
+                    <li>
+                            <div class="type-title-sm">Points when completed</div>
+                            <p>{{ score(selected + 1, 100, level.percentToQualify) }}</p>
+                        </li>
+
                         <li>
                             <div class="type-title-sm">ID</div>
                             <p>{{ level.id }}</p>
@@ -76,8 +81,8 @@ export default {
                         
                      </ul>
                     <h2>Records</h2>
-                    <p v-if="selected + 1 <= 25"><strong>{{ level.percentToQualify }}%</strong> or better to qualify</p>
-                    <p v-else-if="selected +1 <= 50"><strong>100%</strong> or better to qualify</p>
+                    <p v-if="selected + 1 <= 25"></p>
+                    <p v-else-if="selected +1 <= 50"></p>
                     <p v-else>This level does not accept new records.</p>
 
                     <table class="records">
