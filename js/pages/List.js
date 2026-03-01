@@ -81,7 +81,7 @@ export default {
                         
                      </ul>
                     <h2>Records</h2>
-                    <p v-if="selected + 1 >= 50">This level does not accept new records.</p>
+                    <p v-if="selected + 1 > 50">This level does not accept new records.</p>
 
                     <table class="records">
                         <tr v-for="record in level.records" class="record">
