@@ -20,7 +20,7 @@
             "percent": 100,
             "link": "https://youtube.com/shorts/Org38RxocbI?si=SfPQyR96TxdyiYus",
             "hz": "120FPS"
-            "mobile": "true"
+            "mobile": true
         }
     ]
 }
